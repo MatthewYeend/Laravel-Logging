@@ -1,0 +1,30 @@
+{
+    "name": "mattyeend/logger",
+    "description": "A Laravel package for logging actions",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MattYeend\\Logger\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MattYeend\\Logger\\LoggerServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Matt Yeend",
+            "email": "mattyeend1@hotmail.co.uk"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./packages/MattYeend/Logger"
+        }
+    ],
+    "require": {}
+}
