@@ -64,20 +64,28 @@ $relatedUser = $log->relatedToUser;
 ```
 
 ## Predefined Actions
-| Constant                   | Value | Description                |
-|----------------------------|-------|----------------------------|
-| `ACTION_LOGIN`             | 1     | User logged in             |
-| `ACTION_LOGOUT`            | 2     | User logged out            |
-| `ACTION_CREATE_USER`       | 3     | Created a new user         |
-| `ACTION_UPDATE_USER`       | 4     | Updated a user             |
-| `ACTION_DELETE_USER`       | 5     | Deleted a user             |
-| `ACTION_SHOW_USER`         | 6     | Viewed a user profile      |
-| `ACTION_WELCOME_EMAIL_SENT`| 7     | Sent a welcome email       |
-| `ACTION_CONFIRM_PASSWORD`  | 8     | Confirmed password         |
-| `ACTION_FORGOT_PASSWORD`   | 9     | Initiated password reset   |
-| `ACTION_REGISTER_USER`     | 10    | Registered a new user      |
-| `ACTION_RESET_PASSWORD`    | 11    | Reset password             |
-| `ACTION_VERIFY_USER`       | 12    | Verified user email        |
+| Constant                    | Value | Description                  |
+|-----------------------------|-------|------------------------------|
+| `ACTION_LOGIN`              | 1     | User logged in               |
+| `ACTION_LOGOUT`             | 2     | User logged out              |
+| `ACTION_CREATE_USER`        | 3     | Created a new user           |
+| `ACTION_UPDATE_USER`        | 4     | Updated a user               |
+| `ACTION_DELETE_USER`        | 5     | Deleted a user               |
+| `ACTION_SHOW_USER`          | 6     | Viewed a user profile        |
+| `ACTION_WELCOME_EMAIL_SENT` | 7     | Sent a welcome email         |
+| `ACTION_CONFIRM_PASSWORD`   | 8     | Confirmed password           |
+| `ACTION_FORGOT_PASSWORD`    | 9     | Initiated password reset     |
+| `ACTION_REGISTER_USER`      | 10    | Registered a new user        |
+| `ACTION_RESET_PASSWORD`     | 11    | Reset password               |
+| `ACTION_VERIFY_USER`        | 12    | Verified user email          |
+| `ACTION_PASSWORD_CHANGED`   | 13    | Changed password             |
+| `ACTION_MFA_ENABLED`        | 14    | Enabled multi-factor auth    |
+| `ACTION_MFA_DISABLED`       | 15    | Disabled multi-factor auth   |
+| `ACTION_PROFILE_UPDATED`    | 16    | Updated user profile         |
+| `ACTION_EMAIL_UPDATED`      | 17    | Updated email address        |
+| `ACTION_ROLE_ASSIGNED`      | 18    | Assigned a role to a user    |
+| `ACTION_PERMISSION_GRANTED` | 19    | Granted permissions to user  |
+| `ACTION_PERMISSION_REVOKED` | 20    | Revoked user permissions     |
 
 ## Customisation
 ### Modify Migrations

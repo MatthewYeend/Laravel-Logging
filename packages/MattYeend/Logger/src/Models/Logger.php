@@ -3,6 +3,7 @@
 namespace MattYeend\Logger\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Logger extends Model
 {
@@ -13,6 +14,10 @@ class Logger extends Model
         'data',
         'logged_in_user_id',
         'related_to_user_id'
+    ];
+
+    protected $casts = [
+        'data' => 'array',
     ];
 
     public function loggedInUser(){
@@ -35,6 +40,14 @@ class Logger extends Model
     const ACTION_REGISTER_USER = 10;
     const ACTION_RESET_PASSWORD = 11;
     const ACTION_VERIFY_USER = 12;
+    const ACTION_PASSWORD_CHANGED = 13;
+    const ACTION_MFA_ENABLED = 14;
+    const ACTION_MFA_DISABLED = 15;
+    const ACTION_PROFILE_UPDATED = 16;
+    const ACTION_EMAIL_UPDATED = 17;
+    const ACTION_ROLE_ASSIGNED = 18;
+    const ACTION_PERMISSION_GRANTED = 19;
+    const ACTION_PERMISSION_REVOKED = 20;
 
     public static function log($action = 0, $data = null, $logged_in_user_id = null, $related_to_user_id = null){
         if(isset($action)){
