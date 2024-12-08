@@ -104,8 +104,8 @@ Add additional functionality by extending the `Logger` model in your application
     Ensure `data` passed to `Logger::log()` is either `null` or an array. Example:
     `Logger::log(Logger::ACTION_LOGIN, ['key' => 'value'], auth()->id());`
 
-### License
+## License
 This package is licensed under the MIT License.
 
-### Contributing
+## Contributing
 Feel free to fork the repository and submit pull requests for improvements or new features!
