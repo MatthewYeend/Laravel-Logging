@@ -86,6 +86,7 @@ $relatedUser = $log->relatedToUser;
 | `ACTION_ROLE_ASSIGNED`      | 18    | Assigned a role to a user    |
 | `ACTION_PERMISSION_GRANTED` | 19    | Granted permissions to user  |
 | `ACTION_PERMISSION_REVOKED` | 20    | Revoked user permissions     |
+| `ACTION_GENERAL_ERROR`      | 21    | General error                |
 
 ## Customisation
 ### Modify Migrations

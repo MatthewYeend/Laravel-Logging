@@ -48,6 +48,7 @@ class Logger extends Model
     const ACTION_ROLE_ASSIGNED = 18;
     const ACTION_PERMISSION_GRANTED = 19;
     const ACTION_PERMISSION_REVOKED = 20;
+    const ACTION_GENERAL_ERROR = 21;
 
     public static function log($action = 0, $data = null, $logged_in_user_id = null, $related_to_user_id = null){
         if(isset($action)){
