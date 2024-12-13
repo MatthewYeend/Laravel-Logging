@@ -26,5 +26,7 @@
             "url": "./packages/MattYeend/Logger"
         }
     ],
-    "require": {}
+    "require": {
+        "mattyeend/logger": "*"
+    }
 }
