@@ -50,6 +50,22 @@ class Logger extends Model
     const ACTION_PERMISSION_REVOKED = 20;
     const ACTION_GENERAL_ERROR = 21;
 
+    /* Add your own actions below by using a similar format to above (const ACTION_NAME_OF_ACTION = ###).
+     * To keep with naming conventions, the constant key word should be lower case, and the action should
+     * all be upper case starting with the word 'ACTION_'
+     */
+
+    // Your actions to go below here. 
+
+    /* Put temporary actions below here.
+     * Put new actions below before submitting for code review and move up when merging to make sure all
+     * ID's aren't already used. 
+     * Ensure that the naming conventions match and everything after 'ACTION_ is relevant to the task at 
+     * hand. 
+     */
+    // Not an action, do not use
+    const NOT_AN_ACTION = 000;
+
     public static function log($action = 0, $data = null, $logged_in_user_id = null, $related_to_user_id = null){
         if(isset($action)){
             if(empty($logged_in_user_id)){

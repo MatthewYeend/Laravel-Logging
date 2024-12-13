@@ -15,5 +15,10 @@ class LoggerServiceProvider extends ServiceProvider
     {
         // Load migrations
         $this->loadMigrationsFrom(__DIR__ . 'Database/Migrations');
+
+        // Publish the logger model
+        $this->publishes([
+            __DIR__ . 'src/Models/Logger.php' => app_path('Models/Logger.php'),
+        ], 'logger-model');
     }
 }
