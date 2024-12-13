@@ -1,32 +1,21 @@
 {
     "name": "mattyeend/logger",
-    "description": "A Laravel package for logging actions",
+    "description": "A logging library for Laravel.",
+    "type": "library",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "MattYeend\\Logger\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "MattYeend\\Logger\\LoggerServiceProvider"
-            ]
-        }
-    },
     "authors": [
         {
-            "name": "Matt Yeend",
-            "email": "mattyeend1@hotmail.co.uk"
-        }
-    ],
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./packages/MattYeend/Logger"
+            "name": "Matty Yeend",
+            "email": "matty@example.com"
         }
     ],
     "require": {
-        "mattyeend/logger": "*"
+        "php": "^7.4 || ^8.0",
+        "laravel/framework": "^8.0 || ^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mattyeend\\Logger\\": "src/"
+        }
     }
 }
