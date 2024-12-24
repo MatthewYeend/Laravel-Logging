@@ -49,6 +49,9 @@ class Logger extends Model
     const ACTION_PERMISSION_GRANTED = 19;
     const ACTION_PERMISSION_REVOKED = 20;
     const ACTION_GENERAL_ERROR = 21;
+    const ACTION_FOUR_HUNDRED_ERROR = 22;
+    const ACTION_FIVE_HUNDRED_ERRORS = 23;
+    const ACTION_CLEAR_CACHE = 24;
 
     /* Add your own actions below by using a similar format to above (const ACTION_NAME_OF_ACTION = ###).
      * To keep with naming conventions, the constant key word should be lower case, and the action should
@@ -63,6 +66,7 @@ class Logger extends Model
      * Ensure that the naming conventions match and everything after 'ACTION_ is relevant to the task at 
      * hand. 
      */
+
     // Not an action, do not use
     const NOT_AN_ACTION = 000;
 
