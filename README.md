@@ -15,25 +15,10 @@ A Laravel package for logging application events into a database table. This pac
 
 ## Installation
 
-1. **Add the Package**  
-    Clone or place the package in the `packages/MattYeend/Logger` directory of your Laravel project.
-
-2. **Register the Package**  
-    Add the following entry in your Laravel application's `composer.json`:
-
-    ```
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./packages/MattYeend/Logger"
-        }
-    ]
-    ```
-
-3. **Require the package**
+1. **Require the package**
     Run the following command: `composer require MattYeend/logger`
 
-4. **Run Migrations**
+2. **Run Migrations**
     Publish and run the migrations to create the `logger` table:
     `php artisan migrate`
 
