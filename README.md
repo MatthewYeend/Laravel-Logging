@@ -16,7 +16,7 @@ A Laravel package for logging application events into a database table. This pac
 ## Installation
 
 1. **Require the package**
-    Run the following command: `composer require MattYeend/logger`
+    Run the following command: `composer require MattYeend/Logger`
 
 2. **Run Migrations**
     Publish and run the migrations to create the `logger` table:
@@ -24,7 +24,7 @@ A Laravel package for logging application events into a database table. This pac
 
 ## Usage
 ### To publish the package
-- Run `php artisan vendor:publish --provider="MattYeend\Logger\LoggerServiceProvider" --tag=logger-model`
+- Run `php artisan vendor:publish --provider="MattYeend\Logger\LoggerServiceProvider"`
 - This will publish the `Logger.php` model into the `apps/Models/` directory of your Laravel project. You can then edit the model directly in the project as needed, and add more actions
 - Once the model is published, ensure that Composer's autoload files are regenerated so the newly published model is available by running `composer dump-autoload`
 
