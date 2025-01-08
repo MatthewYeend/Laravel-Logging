@@ -22,7 +22,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Mattyeend\\Logger\\": "src/"
+            "Mattyeend\\Logger\\": "src/",
+            "MattYeend\\Logger\\Models\\": "app/Models/"
         }
     },
     "extra": {
