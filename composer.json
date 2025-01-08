@@ -3,6 +3,13 @@
     "description": "A logging library for Laravel.",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "Laravel",
+        "Log",
+        "Logger",
+        "Logging",
+        "Package"
+    ],
     "authors": [
         {
             "name": "Matt Yeend",
