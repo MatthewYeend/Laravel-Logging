@@ -54,29 +54,39 @@ $relatedUser = $log->relatedToUser;
 ```
 
 ## Predefined Actions
-| Constant                    | Value | Description                  |
-|-----------------------------|-------|------------------------------|
-| `ACTION_LOGIN`              | 1     | User logged in               |
-| `ACTION_LOGOUT`             | 2     | User logged out              |
-| `ACTION_CREATE_USER`        | 3     | Created a new user           |
-| `ACTION_UPDATE_USER`        | 4     | Updated a user               |
-| `ACTION_DELETE_USER`        | 5     | Deleted a user               |
-| `ACTION_SHOW_USER`          | 6     | Viewed a user profile        |
-| `ACTION_WELCOME_EMAIL_SENT` | 7     | Sent a welcome email         |
-| `ACTION_CONFIRM_PASSWORD`   | 8     | Confirmed password           |
-| `ACTION_FORGOT_PASSWORD`    | 9     | Initiated password reset     |
-| `ACTION_REGISTER_USER`      | 10    | Registered a new user        |
-| `ACTION_RESET_PASSWORD`     | 11    | Reset password               |
-| `ACTION_VERIFY_USER`        | 12    | Verified user email          |
-| `ACTION_PASSWORD_CHANGED`   | 13    | Changed password             |
-| `ACTION_MFA_ENABLED`        | 14    | Enabled multi-factor auth    |
-| `ACTION_MFA_DISABLED`       | 15    | Disabled multi-factor auth   |
-| `ACTION_PROFILE_UPDATED`    | 16    | Updated user profile         |
-| `ACTION_EMAIL_UPDATED`      | 17    | Updated email address        |
-| `ACTION_ROLE_ASSIGNED`      | 18    | Assigned a role to a user    |
-| `ACTION_PERMISSION_GRANTED` | 19    | Granted permissions to user  |
-| `ACTION_PERMISSION_REVOKED` | 20    | Revoked user permissions     |
-| `ACTION_GENERAL_ERROR`      | 21    | General error                |
+| Constant | Value | Description |
+|-|-|-|
+| `ACTION_LOGIN` | 1 | User logged in |
+| `ACTION_LOGOUT` | 2 | User logged out |
+| `ACTION_CREATE_USER` | 3 | Created a new user |
+| `ACTION_UPDATE_USER` | 4 | Updated a user |
+| `ACTION_DELETE_USER` | 5 | Deleted a user |
+| `ACTION_SHOW_USER` | 6 | Viewed a user profile |
+| `ACTION_WELCOME_EMAIL_SENT` | 7 | Sent a welcome email |
+| `ACTION_CONFIRM_PASSWORD` | 8 | Confirmed password |
+| `ACTION_FORGOT_PASSWORD` | 9 | Initiated password reset |
+| `ACTION_REGISTER_USER` | 10 | Registered a new user |
+| `ACTION_LOGIN_FAILED` | 11 | Login failed |
+| `ACTION_LOGIN_PASSWORD_FAILED` | 12 | Login via password failed |
+| `ACTION_LOGIN_EMAIL_FAILED` | 13 | Login via email failed |
+| `ACTION_LOGIN_USERNAME_FAILED` | 14 | Login via username failed |
+| `ACTION_LOGIN_SUCCESS` | 15 | Login success |
+| `ACTION_RESET_PASSWORD` | 16 | Reset password |
+| `ACTION_RESET_EMAIL` | 17 | Reset email |
+| `ACTION_RESET_USERNAME` | 18 | Reset username |
+| `ACTION_VERIFY_USER` | 19 | Verified user email |
+| `ACTION_PASSWORD_CHANGED` | 20 | Changed password |
+| `ACTION_MFA_ENABLED` | 21 | Enabled multi-factor auth |
+| `ACTION_MFA_DISABLED` | 22 | Disabled multi-factor auth |
+| `ACTION_PROFILE_UPDATED` | 23 | Updated user profile |
+| `ACTION_EMAIL_UPDATED` | 24 | Updated email address |
+| `ACTION_ROLE_ASSIGNED` | 25 | Assigned a role to a user |
+| `ACTION_PERMISSION_GRANTED` | 26 | Granted permissions to user |
+| `ACTION_PERMISSION_REVOKED` | 27 | Revoked user permissions |
+| `ACTION_GENERAL_ERROR` | 28 | General error |
+| `ACTION_FOUR_HUNDRED_ERROR` | 29 | Four hundred error |
+| `ACTION_FIVE_HUNDRED_ERROR` | 30 | Five hundred error |
+| `ACTION_CLEAR_CACHE` | 31 | Clear Cache |
 
 ## Customisation
 ### Modify Migrations
