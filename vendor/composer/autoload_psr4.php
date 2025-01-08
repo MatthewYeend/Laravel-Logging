@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Mattyeend\\Logger\\' => array($baseDir . '/src'),
-    'MattYeend\\Logger\\Models\\' => array($baseDir . '/app/Models'),
 );
