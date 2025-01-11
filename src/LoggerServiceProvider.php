@@ -9,7 +9,7 @@ class LoggerServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        // Bind the Logger model if necessary
+        // Register bindings or configurations if necessary
     }
 
     public function boot()
@@ -17,15 +17,18 @@ class LoggerServiceProvider extends ServiceProvider
         // Load migrations
         $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
 
-        // Publish the logger model with dynamic namespace replacement
+        // Publish the logger model stub with a tag
         $this->publishes([
             __DIR__ . '/Models/Logger.stub' => app_path('Models/Logger.php'),
-        ], 'logger-model');
+        ], 'logger-model'); // Add the tag here
 
-        // Replace namespace dynamically after publishing
+        // Perform namespace replacement in the published stub
         $this->replaceNamespaceInPublishedStub();
     }
 
+    /**
+     * Replaces the namespace placeholder in the published Logger model.
+     */
     protected function replaceNamespaceInPublishedStub()
     {
         $filesystem = app(Filesystem::class);
@@ -34,10 +37,14 @@ class LoggerServiceProvider extends ServiceProvider
         if ($filesystem->exists($loggerPath)) {
             try {
                 $contents = $filesystem->get($loggerPath);
-                $contents = str_replace('{{ namespace }}', 'App\Models', $contents);
-                $filesystem->put($loggerPath, $contents);
+
+                // Only replace the namespace if the placeholder exists
+                if (strpos($contents, '{{ namespace }}') !== false) {
+                    $contents = str_replace('{{ namespace }}', 'App\Models', $contents);
+                    $filesystem->put($loggerPath, $contents);
+                }
             } catch (\Exception $e) {
-                // Log an error or handle it gracefully
+                // Log an error for debugging purposes
                 logger()->error('Failed to replace namespace in Logger model: ' . $e->getMessage());
             }
         }

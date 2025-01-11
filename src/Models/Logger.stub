@@ -13,18 +13,20 @@ class Logger extends Model
         'action_id',
         'data',
         'logged_in_user_id',
-        'related_to_user_id'
+        'related_to_user_id',
     ];
 
     protected $casts = [
         'data' => 'array',
     ];
 
-    public function loggedInUser(){
+    public function loggedInUser()
+    {
         return $this->belongsTo(User::class, 'logged_in_user_id');
     }
 
-    public function relatedToUser(){
+    public function relatedToUser()
+    {
         return $this->belongsTo(User::class, 'related_to_user_id');
     }
 
@@ -39,7 +41,7 @@ class Logger extends Model
     const ACTION_FORGOT_PASSWORD = 9;
     const ACTION_REGISTER_USER = 10;
     const ACTION_LOGIN_FAILED = 11;
-    const ACTION_LOGIN_PASSWORD_FAILED = 12; 
+    const ACTION_LOGIN_PASSWORD_FAILED = 12;
     const ACTION_LOGIN_EMAIL_FAILED = 13;
     const ACTION_LOGIN_USERNAME_FAILED = 14;
     const ACTION_LOGIN_SUCCESS = 15;
@@ -60,35 +62,18 @@ class Logger extends Model
     const ACTION_FIVE_HUNDRED_ERRORS = 30;
     const ACTION_CLEAR_CACHE = 31;
 
-    /* Add your own actions below by using a similar format to above (const ACTION_NAME_OF_ACTION = ###).
-     * To keep with naming conventions, the constant key word should be lower case, and the action should
-     * all be upper case starting with the word 'ACTION_'
-     */
+    public static function log($action = 0, $data = null, $logged_in_user_id = null, $related_to_user_id = null)
+    {
+        if (isset($action)) {
+            $logged_in_user_id = $logged_in_user_id ?? Auth::id();
 
-    // Your actions to go below here. 
-
-    /* Put temporary actions below here.
-     * Put new actions below before submitting for code review and move up when merging to make sure all
-     * ID's aren't already used. 
-     * Ensure that the naming conventions match and everything after 'ACTION_ is relevant to the task at 
-     * hand. 
-     */
-
-    // Not an action, do not use
-    const NOT_AN_ACTION = 000;
-
-    public static function log($action = 0, $data = null, $logged_in_user_id = null, $related_to_user_id = null){
-        if(isset($action)){
-            if(empty($logged_in_user_id)){
-                $logged_in_user_id = Auth::user()->id;
-            }
-            if(in_array(gettype($data), ['array'])){
+            if (is_array($data)) {
                 $data = json_encode($data);
-            }else{
+            } elseif (!is_null($data)) {
                 throw new \InvalidArgumentException('Data must be an array or null.');
             }
 
-            $log = new Logger;
+            $log = new self();
             $log->logged_in_user_id = $logged_in_user_id;
             $log->action_id = $action;
             $log->related_to_user_id = $related_to_user_id;
