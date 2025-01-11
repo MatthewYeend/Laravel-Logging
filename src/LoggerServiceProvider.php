@@ -19,8 +19,8 @@ class LoggerServiceProvider extends ServiceProvider
 
         // Publish the logger model stub with a tag
         $this->publishes([
-            __DIR__ . '/Models/Logger.stub' => app_path('Models/Logger.php'),
-        ], 'logger-model'); // Add the tag here
+            __DIR__ . '/Models/Logger.stub' => app_path('Logger.php'), // Publish directly to ./app
+        ], 'logger-model');
 
         // Perform namespace replacement in the published stub
         $this->replaceNamespaceInPublishedStub();
@@ -32,7 +32,7 @@ class LoggerServiceProvider extends ServiceProvider
     protected function replaceNamespaceInPublishedStub()
     {
         $filesystem = app(Filesystem::class);
-        $loggerPath = app_path('Models/Logger.php');
+        $loggerPath = app_path('Logger.php'); // Updated to match the new path
 
         if ($filesystem->exists($loggerPath)) {
             try {
@@ -40,7 +40,7 @@ class LoggerServiceProvider extends ServiceProvider
 
                 // Only replace the namespace if the placeholder exists
                 if (strpos($contents, '{{ namespace }}') !== false) {
-                    $contents = str_replace('{{ namespace }}', 'App\Models', $contents);
+                    $contents = str_replace('{{ namespace }}', 'App', $contents);
                     $filesystem->put($loggerPath, $contents);
                 }
             } catch (\Exception $e) {
