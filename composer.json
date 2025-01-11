@@ -1,14 +1,15 @@
 {
     "name": "mattyeend/logger",
-    "description": "A logging library for Laravel.",
+    "description": "A comprehensive logging library for Laravel applications.",
     "type": "library",
     "license": "MIT",
     "keywords": [
         "Laravel",
-        "Log",
-        "Logger",
         "Logging",
-        "Package"
+        "Logger",
+        "Package",
+        "Audit",
+        "Tracking"
     ],
     "authors": [
         {
@@ -17,15 +18,21 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^7.4 || ^8.0 || ^8.1 || ^8.2",
         "laravel/framework": "^9.0 || ^10.0 || ^11.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.0 || ^10.0"
+        "phpunit/phpunit": "^9.0 || ^10.0",
+        "friendsofphp/php-cs-fixer": "^3.0"
     },
     "autoload": {
         "psr-4": {
-            "Mattyeend\\Logger\\": "src/"
+            "MattYeend\\Logger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MattYeend\\Logger\\Tests\\": "tests/"
         }
     },
     "extra": {
